@@ -1,0 +1,70 @@
+\documentclass{beamer}
+\usetheme{CambridgeUS}
+
+\setbeamertemplate{caption}[numbered]{}
+
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{gensymb}
+\usepackage{graphicx}
+\usepackage{txfonts}
+
+\def\inputGnumericTable{}
+
+\usepackage[latin1]{inputenc}                                 
+\usepackage{color}                                            
+\usepackage{array}                                            
+\usepackage{longtable}                                        
+\usepackage{calc}                                             
+\usepackage{multirow}                                         
+\usepackage{hhline}                                           
+\usepackage{ifthen}
+\usepackage{caption}
+
+\title{AI1110 \\ Assignment 11}
+\author{Bandaru Naresh Kumar \\ AI21BTECH11006}
+\date{}
+\begin{document}
+	% The title page
+	\begin{frame}
+		\titlepage
+	\end{frame}
+	
+	% The table of contents
+	\begin{frame}{Outline}
+    		\tableofcontents
+	\end{frame}
+	
+	% The question
+	\section{Question}
+	\begin{frame}{Exercise 15.12}
+       In the genetic model in (15-31),consider the possibility that prior to the formation of a new generation each gene can spontaneously mutate into a gene of the other kind with probabilities\\
+       $P(A\rightarrow B) = \alpha(>0)$ and\\
+       $P(B\rightarrow A) = \beta(>0)$\\
+       Thus for a system in state $e_j$, after mutation there are $N_A = j(1-\alpha)+(N-1)\beta$ genes of type A and $N_B = j\alpha = (N-1)(1-\beta)$ genes of type B. 
+	\end{frame}
+	
+	\begin{frame}{Exercise 15.12}
+	  Hence the modified probabilities prior to forming a new generation are\\
+	  $p_j = \dfrac{N_A}{N} = \dfrac{j}{N}(1-\alpha)+(1-\dfrac{j}{N})\beta$ and\\
+	  $q_j = \dfrac{N_B}{N} = \dfrac{1}{N}\alpha+(1-\dfrac{j}{N})(1-\beta)$\\
+	  for the A and B genes,respectively.	
+	\end{frame}
+	
+	\begin{frame}{Exercise 15.12}
+	This gives\\
+	$p_{jk} = \binom{N}{k} p_j^k q_j^{N-k}$ where j,k = 0,1,2,....,N\\
+	to be the modified transition probabilities for the Morkov chain with mutation.Derive the steady state distribution for this model,and show that,unlike the models in (15-30) and (15-31),fixation to "the pure gene states" does not occur in this case.
+	\end{frame}
+	
+	% The solution
+	\section{Solution}
+	\begin{frame}{Solution}
+	     In this case,the chain is irreducible and aperiodic and there are no absorption states.\\
+	     The steady state distribution $\{u_k\}$ satisfies:\\
+	     $u_k = \sum_j u_jp_{jk} = \sum_{j=0}^N u_j \binom{N}{k} p_j^kq_j^{N-k}$\\
+	     So if $\alpha > 0$ and $\beta > 0$,then "fixation to pure genes" does not occur.    	     
+	 \end{frame}
+	  
+\end{document}
